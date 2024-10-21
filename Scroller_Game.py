@@ -6,7 +6,7 @@ import csv
 from pygame import *
 from tkinter import messagebox
 
-class GameButton: # This class is being used in the level editor 
+class GameButton: 
         def __init__(self, x, y, image, allow):
             self.image = image
             self.rect = self.image.get_rect(topleft=(x, y))
@@ -20,7 +20,7 @@ class GameButton: # This class is being used in the level editor
             mouse_pos = pygame.mouse.get_pos()
             mouse_click = pygame.mouse.get_pressed()[0]  
 
-            if not self.initial_click_processed: # gia na katharisei sto prwto click
+            if not self.initial_click_processed: 
                 if mouse_click == 0:
                     self.initial_click_processed = True
                 return action
@@ -62,7 +62,7 @@ if __name__ == "__main__":
                             decoration = Decoration(img, x * TILE_SIZE, y * TILE_SIZE)
                             decoration_group.add(decoration)
                         elif tile == 19:
-                            player = soldier('player', x * TILE_SIZE, y * TILE_SIZE,) # H TAXUTHTA POY TREXEI O PAIXTIS WSTE NA EINAI H IDIA OSO KAI AN EINAI TO WIDTH
+                            player = soldier('player', x * TILE_SIZE, y * TILE_SIZE,) 
                             health_bar = HealthBar(10, 10, player.health, player.health)
                         elif tile == 20:
                             enemy = soldier('enemy', x * TILE_SIZE, y * TILE_SIZE, )
@@ -181,9 +181,9 @@ if __name__ == "__main__":
             self.check_alive()
             if self.shoot_cooldown > 0:
                 self.shoot_cooldown -= 1
-                
-            #FADE OUT GIA OTAN PETHANEI KAPOIOS
-            self.fade_out()
+
+
+            self.fade_out() #DEATH FADEOUT
 
        
             
@@ -770,7 +770,7 @@ if __name__ == "__main__":
                 screen_scroll,level_complete = player.move(moving_left, moving_right)
                 bg_scroll -= screen_scroll
                 player.update()
-                if level_complete : # FORTWNEI TO EPOMENO LEVEL
+                if level_complete : 
                     level += 1
                     try:
                         world_data,world,player,health_bar,bg_scroll = world.load_level(level)
@@ -799,7 +799,7 @@ if __name__ == "__main__":
                         world_data,world,player,health_bar,bg_scroll = world.load_level(level)
                         
                         
-        keys = pygame.key.get_pressed()  # epitrepetai to paratetameno pathma plhktrwn
+        keys = pygame.key.get_pressed()  
         if keys[pygame.K_w] and player.alive and not player.in_air:
                 player.jump = True
                 sound_effects['jump'].play()
@@ -820,7 +820,7 @@ if __name__ == "__main__":
                 if event.key == pygame.K_q:
                     grenade = True
 
-            # released
+            
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_a:
                     moving_left = False
