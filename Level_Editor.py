@@ -7,10 +7,10 @@ pygame.init()
 
 
 pygame.display.set_caption('Level Editor')
-if getattr(sys, 'frozen', False): # Fom when it is executed as .exe
+if getattr(sys, 'frozen', False): 
         pathh = sys._MEIPASS
 else: 
-	pathh = os.path.dirname(__file__) # For when it is executed in a Python enviroment
+	pathh = os.path.dirname(__file__) 
 clock = pygame.time.Clock()
 FPS_CAP = 60
 SCREEN_WIDTH = 800
@@ -135,7 +135,7 @@ def save_level(level,world_data,pathh):
 			
 
 run = True
-load_level(level,world_data,scroll) # Loads the first level
+load_level(level,world_data,scroll) 
 while run:
 	
 	clock.tick(FPS_CAP)
