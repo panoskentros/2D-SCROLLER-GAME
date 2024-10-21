@@ -226,7 +226,7 @@ if __name__ == "__main__":
                     if self.char_type == 'enemy':
                         self.direction *= -1
                         self.move_counter = 0
-                if tile[1].colliderect(self.rect.x, self.rect.y + dy, self.width, self.height): #
+                if tile[1].colliderect(self.rect.x, self.rect.y + dy, self.width, self.height): 
                     if self.vel_y < 0:  
                         self.vel_y = 0
                         dy = tile[1].bottom - self.rect.top
@@ -652,7 +652,7 @@ if __name__ == "__main__":
     mute_button= GameButton(SCREEN_WIDTH -200, 2,button_images['mute'],False)
     unmute_button =GameButton(SCREEN_WIDTH - 200, 2,button_images['unmute'],False)
 
-    level = 1 # arxiko level
+    level = 1 
     grenade = False
     GRAVITY = 0.75
     shoot = False
